@@ -1,0 +1,18 @@
+# Dependencies
+/node_modules
+
+# Environment variables (Crucial for security!)
+.env
+
+# Generated files
+/pdfs
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.log
+
+# OS files
+.DS_Store
+Thumbs.db
