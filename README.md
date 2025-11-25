@@ -1,134 +1,161 @@
-Autonomous Company Builder (ACB)
+# Autonomous Company Builder (ACB)
 
-Autonomous Company Builder (ACB) is a Node.js project that automatically generates a complete business concept using Google Gemini 2.5 AI. It produces research insights, branding, product ideas, website content, operations plans, and generates downloadable JSON and PDF outputs. The frontend streams updates in real time via Server-Sent Events (SSE).
+**Autonomous Company Builder (ACB)** is a Node.js project that automatically generates a complete, ready-to-use business concept using Google Gemini 2.5 AI. It orchestrates the AI to produce deep research insights, comprehensive branding, viable product ideas, website content, and operations plans. The final output includes downloadable JSON and PDF reports.
 
-Features
+---
 
-Generates an entire company plan from a single industry input.
+## ✨ Features
 
-Uses Google Gemini 2.5 AI for:
+* Generates an entire company plan from a single industry input.
+* Uses Google Gemini 2.5 AI for:
 
-Market research
+  * Market research and deep insights.
+  * Branding (brand name, slogan, personality, color palette, etc.).
+  * Product ideas with clear Unique Selling Propositions (USPs).
+  * Website content (navigation, hero section, detailed pages).
+  * Operations and marketing plans.
+* Real-time streaming updates using Server-Sent Events (SSE).
+* Downloadable JSON and PDF reports of the complete company plan.
+* Ready-to-use frontend with a single HTML file (`public/index.html`).
 
-Branding (brand name, slogan, personality, color palette, etc.)
+---
 
-Product ideas with USP
+## 🛠️ Installation
 
-Website content (navigation, hero section, pages)
+Follow these steps to set up and run the project locally.
 
-Operations and marketing plans
+### 1. Clone the repository
 
-Real-time streaming updates using SSE.
-
-Downloadable JSON and PDF reports.
-
-Ready-to-use frontend with a single HTML file.
-
-Demo Screenshot
-
-(Add screenshot here if you like)
-
-Installation
-
-Clone the repository:
-
+```bash
 git clone https://github.com/yourusername/autonomous-company-builder.git
 cd autonomous-company-builder
+```
 
+### 2. Install dependencies
 
-Install dependencies:
-
+```bash
 npm install
+```
 
+### 3. Set module type in `package.json`
 
-Set module type in package.json:
+Make sure your `package.json` contains the following so ES module syntax is enabled:
 
-Ensure your package.json contains:
-
+```json
 {
   "type": "module"
 }
+```
 
+### 4. Set your Google Gemini API key
 
-Set your Google Gemini API key:
+Replace `YOUR_API_KEY` with your actual key in your environment.
 
-Replace YOUR_API_KEY with your actual key.
+**Environment**
 
-Windows PowerShell:
+**Windows PowerShell**
 
+```powershell
 $env:GEMINI_API_KEY="YOUR_API_KEY"
+```
 
+**Windows CMD**
 
-Windows CMD:
-
+```cmd
 set GEMINI_API_KEY=YOUR_API_KEY
+```
 
+**macOS / Linux**
 
-macOS / Linux:
-
+```bash
 export GEMINI_API_KEY="YOUR_API_KEY"
+```
 
-Usage
+---
 
-Start the server:
+## 🚀 Usage
 
+1. Start the server:
+
+```bash
 node server.js
+```
 
+2. Open the frontend in your browser:
 
-Open your browser and go to:
-
+```
 http://localhost:3000
+```
 
+3. Generate a company:
 
-Enter an industry and click Generate Company.
+* Enter an industry (e.g., `sustainable clothing` or `AI-powered education`) into the input field.
+* Click **Generate Company**.
+* Watch the streaming updates in real time on the page.
+* Once generation is complete, use the links to **Download JSON** or **Download PDF**.
 
-Watch the streaming updates in real time.
+---
 
-Download JSON or PDF once generation completes.
+## 📂 Project Structure
 
-Project Structure
+```
 autonomous-company-builder/
 │
 ├─ public/
-│  └─ index.html       # Frontend file
+│  └─ index.html     # Frontend file for the user interface
 │
-├─ pdfs/               # Generated PDFs stored here
-├─ server.js           # Node.js server with AI orchestration
-├─ package.json
-└─ README.md
+├─ pdfs/             # Generated PDFs stored here
+│
+├─ server.js         # Node.js server with AI orchestration logic
+├─ package.json      # Project dependencies and metadata
+└─ README.md         # This file
+```
 
-Dependencies
+---
 
-Node.js
+## 📦 Dependencies
 
-Express
+This project relies on the following key technologies:
 
-body-parser
+* Node.js
+* Express (Web framework)
+* body-parser (Middleware)
+* cors (Middleware)
+* uuid (Unique identifier generation)
+* puppeteer (For headless Chromium PDF generation)
+* `@google/generative-ai` (Official Google Gemini SDK)
 
-cors
+---
 
-uuid
+## 📌 Notes
 
-puppeteer
+* **API Key:** Requires a valid Google Gemini 2.5 API key.
+* **PDF Generation:** PDF creation is handled by Puppeteer, which manages a headless version of Chromium.
 
-@google/generative-ai
+### API Endpoints
 
-Notes
+* **SSE endpoint:** `/events/:projectId` — streams live updates to the client.
+* **JSON download:** `/download/json/:projectId`
+* **PDF download:** `/download/pdf/:projectId`
 
-Requires a valid Google Gemini 2.5 API key.
+---
 
-PDF generation uses Puppeteer (headless Chromium).
+## 📝 License
 
-SSE endpoint: /events/:projectId streams live updates.
+This project is licensed under the **MIT License**.
 
-JSON download endpoint: /download/json/:projectId
+---
 
-PDF download endpoint: /download/pdf/:projectId
+## ✍️ Author
 
-License
+**Nasif Sajjad**
 
-This project is licensed under the MIT License.
+---
 
-Author
+## Contributing
 
-Nasif Sajjad
+Contributions, issues, and feature requests are welcome. Feel free to open a pull request or an issue in the repository.
+
+---
+
+*Happy building!* 🚀
